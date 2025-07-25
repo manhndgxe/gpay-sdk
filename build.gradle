@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
 
 android {
+    compileSdkVersion 35
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 26
     }
 
     lintOptions {
@@ -14,8 +15,12 @@ android {
         pickFirst '**/*.so'
     }
 }
-
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
 dependencies {
-    implementation files("libs/gpay-sdk.aar")
+     implementation(name: 'gpay-sdk', ext: 'aar')
 }
