@@ -19,14 +19,13 @@ allprojects {
 }
 
 
-publishing {
+afterEvaluate {
     publications {
         release(MavenPublication) {
+            from components.release
             groupId = 'com.github.manhndgxe'
             artifactId = 'sdk'
-            version = '1.0.5'
-
-            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+            version = '1.0.6'
         }
     }
 }
