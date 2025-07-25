@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    defaultConfig {
+        minSdkVersion 21
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    // cho phép JitPack build file .aar
+    packagingOptions {
+        pickFirst '**/*.so'
+    }
+}
+
+
+dependencies {
+    implementation files("libs/gpay-sdk.aar")
+}
