@@ -1,26 +1,16 @@
-apply plugin: 'com.android.library'
-
-android {
-    compileSdkVersion 35
-    defaultConfig {
-        minSdkVersion 26
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-
-    lintOptions {
-        abortOnError false
-    }
-
-    // cho phép JitPack build file .aar
-    packagingOptions {
-        pickFirst '**/*.so'
-    }
-}
-repositories {
-    flatDir {
-        dirs 'libs'
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
     }
 }
 
-dependencies {
-     implementation(name: 'GpaySdk', ext: 'aar')
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
