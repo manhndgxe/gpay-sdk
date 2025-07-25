@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+
 
 android {
     compileSdkVersion 35
@@ -31,14 +31,3 @@ dependencies {
     implementation(name: 'GpaySdk', ext: 'aar')
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.github.manhndgxe'
-            artifactId = 'sdk'
-            version = '1.0.5'
-
-            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
-        }
-    }
-}
